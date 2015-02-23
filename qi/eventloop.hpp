@@ -232,7 +232,7 @@ namespace qi
      */
     class TerminateThread {
     };
-  };
+  }
 }
 
 # ifdef _MSC_VER

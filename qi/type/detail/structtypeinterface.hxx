@@ -358,7 +358,7 @@ QI_TYPE_REGISTER_CUSTOM(name, _qi_::qi::TypeImpl<name>)
  */
 #define QI_TYPE_STRUCT_AGREGATE_CONSTRUCTOR_REGISTER(name, ...) \
 namespace _qi_ {                           \
-    QI_TYPE_STRUCT_AGREGATE_CONSTRUCTOR(name, __VA_ARGS__);     \
+    QI_TYPE_STRUCT_AGREGATE_CONSTRUCTOR(name, __VA_ARGS__)     \
 }                                          \
 QI_TYPE_REGISTER_CUSTOM(name, _qi_::qi::TypeImpl<name>)
 
@@ -391,7 +391,7 @@ public:                                                                   \
  */
 #define QI_TYPE_STRUCT_BOUNCE_REGISTER(name, bounceTo, conversion)        \
 namespace _qi_ {                                                          \
-    QI_TYPE_STRUCT_BOUNCE(name, bounceTo, conversion);                    \
+    QI_TYPE_STRUCT_BOUNCE(name, bounceTo, conversion)                     \
 }                                                                         \
 QI_TYPE_REGISTER_CUSTOM(name, _qi_::qi::TypeImpl<name>)
 

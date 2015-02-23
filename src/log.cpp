@@ -499,7 +499,7 @@ namespace qi {
         AsyncLogInit = true;
         LogThread = boost::thread(&Log::run, this);
       }
-    };
+    }
 
     inline Log::Log() :
       SyncLog(true),
@@ -509,7 +509,7 @@ namespace qi {
 #endif
     {
       LogInit = true;
-    };
+    }
 
     inline Log::~Log()
     {
@@ -756,18 +756,18 @@ namespace qi {
     {
       _glContext = ctx;
       qiLogVerbose() << "Context set to " << _glContext;
-    };
+    }
 
     int context()
     {
       return _glContext;
-    };
+    }
 
     void setColor(LogColor color)
     {
       _glColorWhen = color;
       _glConsoleLogHandler->updateColor();
-    };
+    }
 
     LogColor color()
     {
@@ -777,7 +777,7 @@ namespace qi {
     void setSynchronousLog(bool sync)
     {
       LogInstance->setSynchronousLog(sync);
-    };
+    }
 
     CategoryType addCategory(const std::string& name)
     {

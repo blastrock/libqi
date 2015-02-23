@@ -162,5 +162,5 @@ namespace qi {
 #  pragma warning( pop )
 #endif
 
-QI_TYPE_ENUM_REGISTER(qi::EventTrace::EventKind);
+QI_TYPE_ENUM_REGISTER(qi::EventTrace::EventKind)
 #endif  // _QITYPE_MANAGEABLE_HPP_

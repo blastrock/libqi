@@ -16,9 +16,9 @@ namespace qi
 class QI_API Proxy : public boost::noncopyable
 {
 public:
-  Proxy(AnyObject obj) : _obj(obj) {qiLogDebug("qitype.proxy") << "Initializing " << this;}
+  Proxy(AnyObject obj) : _obj(obj) {qiLogDebugC("qitype.proxy") << "Initializing " << this;}
   Proxy() {}
-  ~Proxy() { qiLogDebug("qitype.proxy") << "Finalizing on " << this;}
+  ~Proxy() { qiLogDebugC("qitype.proxy") << "Finalizing on " << this;}
   Object<Empty> asObject() const;
 protected:
   Object<Empty> _obj;
@@ -26,7 +26,7 @@ protected:
 
 inline AnyObject Proxy::asObject() const
 {
-  qiLogDebug("qitype.proxy") << "asObject " << this << ' ' << &_obj.asT();
+  qiLogDebugC("qitype.proxy") << "asObject " << this << ' ' << &_obj.asT();
   return AnyObject(_obj);
 }
 
@@ -151,7 +151,7 @@ namespace detail
 template<typename Proxy, typename Interface>
 bool registerProxyInterface()
 {
-  qiLogVerbose("qitype.type") << "ProxyInterface registration " << typeOf<Interface>()->infoString();
+  qiLogVerboseC("qitype.proxy") << "ProxyInterface registration " << typeOf<Interface>()->infoString();
   // Runtime-register TypeInterface for Proxy, using ProxyInterface with
   // proper static_cast (from Proxy template to qi::Proxy) helper.
   registerType(typeid(Proxy), detail::makeProxyInterface<Proxy>());

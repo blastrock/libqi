@@ -109,7 +109,7 @@ static qi::ServiceInfoPrivate* serviceInfoPrivate(qi::ServiceInfo* svcinfo) {
     return svcinfo->_p;
 }
 QI_EQUIVALENT_STRING_REGISTER(qi::Url, &qi::Url::str);
-QI_TYPE_STRUCT(qi::ServiceInfoPrivate, name, serviceId, machineId, processId, endpoints, sessionId);
+QI_TYPE_STRUCT(qi::ServiceInfoPrivate, name, serviceId, machineId, processId, endpoints, sessionId)
 QI_TYPE_REGISTER(::qi::ServiceInfoPrivate);
 
 QI_TYPE_STRUCT_BOUNCE_REGISTER(::qi::ServiceInfo, ::qi::ServiceInfoPrivate, serviceInfoPrivate);

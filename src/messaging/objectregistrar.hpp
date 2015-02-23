@@ -94,7 +94,6 @@ namespace qi {
 
 }
 
-QI_TYPE_NOT_CONSTRUCTIBLE(qi::ObjectRegistrar);
-
+QI_TYPE_NOT_CONSTRUCTIBLE(qi::ObjectRegistrar)
 
 #endif  // _SRC_OBJECTREGISTRAR_HPP_

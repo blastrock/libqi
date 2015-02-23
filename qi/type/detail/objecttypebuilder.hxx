@@ -112,7 +112,7 @@ namespace qi {
       typedef typename boost::remove_reference<DecoratedClassType>::type ClassType;
       builder.template inherits<ClassType>();
     }
-  };
+  }
 
   template <typename T>
   template <typename FUNCTION_TYPE>

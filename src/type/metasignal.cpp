@@ -49,4 +49,4 @@ namespace qi {
     return MetaObject::isPrivateMember(name(), uid());
   }
 
-};
+}

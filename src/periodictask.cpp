@@ -265,7 +265,7 @@ namespace qi
         _statsDisplayTime = now;
         unsigned int count = _callStats.count();
         std::string catName = "stats." + _name;
-        qiLogVerbose(catName.c_str())
+        qiLogVerboseC(catName.c_str())
           << (_callStats.user().cumulatedValue() * 100.0 / secTime)
           << "%  "
           << count

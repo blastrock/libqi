@@ -378,6 +378,6 @@ public:
 /* Since AnyReference does not handle its memory, it cannot be used
  * inside a AnyReference. use AnyValue instead.
  */
-QI_NO_TYPE(qi::AnyReference);
+QI_NO_TYPE(qi::AnyReference)
 
 #endif

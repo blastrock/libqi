@@ -228,7 +228,7 @@ namespace qi
     _acceptor->listen(socket_base::max_connections, ec);
     if (ec)
     {
-      qiLogError("qimessaging.server.listen") << ec.message();
+      qiLogError() << ec.message();
       return qi::makeFutureError<void>(ec.message());
     }
     _port = _acceptor->local_endpoint().port();// already in host byte orde
@@ -266,7 +266,7 @@ namespace qi
       if (self->_identityCertificate.empty() || self->_identityKey.empty())
       {
         const char* s = "SSL certificates missing, please call Session::setIdentity first";
-        qiLogError("qimessaging.server.listen") << s;
+        qiLogError() << s;
         return qi::makeFutureError<void>(s);
       }
 

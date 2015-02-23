@@ -66,7 +66,7 @@ namespace qi {
       PrivateFileLogHandler* _p;
     }; // !FileLogHandler
 
-  }; // !log
-}; // !qi
+  } // !log
+} // !qi
 
 #endif  // _QI_LOG_FILELOGHANDLER_HPP_

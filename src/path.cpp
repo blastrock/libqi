@@ -212,7 +212,7 @@ namespace qi
     }
   }
 
-  QI_AT_EXIT(&cleanupSdkLayout);
+  QI_AT_EXIT(&cleanupSdkLayout)
 
   namespace path
   {

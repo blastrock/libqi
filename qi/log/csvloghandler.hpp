@@ -67,7 +67,7 @@ namespace qi {
       boost::scoped_ptr<PrivateCsvLogHandler> _p;
     }; // !CsvLogHandler
 
-  }; // !log
-}; // !qi
+  } // !log
+} // !qi
 
 #endif  // _QI_LOG_CSVLOGHANDLER_HPP_

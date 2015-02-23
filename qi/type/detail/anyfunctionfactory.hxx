@@ -380,7 +380,7 @@ namespace qi
         void* vstorage = _resultType->initializeStorage(
               (refMask&1)? v: &v);
         vstorage = _resultType->clone(vstorage);
-        //qiLogWarning("ft") << "Ret deref " << (unsigned long)v <<' ' << vstorage
+        //qiLogWarningC("qitype.functiontypeinterfaceeq") << "Ret deref " << (unsigned long)v <<' ' << vstorage
         // << ' ' << *(unsigned long*)vstorage;
         v = vstorage;
       }
@@ -489,7 +489,7 @@ namespace qi
       unsigned long mask = EqFunction<F>::refMask;
       FunctionTypeInterface* ftype = FunctionTypeInterfaceEq<MapedF, EqFunPtr>::make(mask, argumentsType, resultType);
 
-      qiLogDebug("qitype.makeAnyFunction") << "bare mask " << (unsigned long)EqFunction<F>::refMask;
+      qiLogDebugC("qitype.makeAnyFunction") << "bare mask " << (unsigned long)EqFunction<F>::refMask;
       return AnyFunction(ftype, ftype->clone(ftype->initializeStorage(&func)));
     }
 
@@ -505,7 +505,7 @@ namespace qi
         nargs.args()[i] = vargs[i+1];
       C* inst = (C*)vargs.front().rawValue();
       if (!inst)
-        qiLogWarning("qitype.AnyArgumentsBouncer") << "Null instance";
+        qiLogWarningC("qitype.AnyArgumentsBouncer") << "Null instance";
       detail::AnyReferenceCopy output;
       output(), (*inst.*fun)(nargs); // output clones
       AnyValue* v = new AnyValue(output, false, true); // steal output

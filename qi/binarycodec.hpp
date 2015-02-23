@@ -171,12 +171,12 @@ namespace qi {
     {
       T v1 = localCapability(key, defaultValue);
       T v2 = remoteCapability(key, defaultValue);
-      qiLogDebug("qitype.capability") << "Share check compare: " << v1 <<' ' << v2;
+      qiLogDebugC("qitype.capability") << "Share check compare: " << v1 <<' ' << v2;
       return std::min (v1, v2);
     }
     catch(const std::exception& e)
     {
-      qiLogDebug("qitype.capability") << "Share check exception: " << e.what();
+      qiLogDebugC("qitype.capability") << "Share check exception: " << e.what();
       return defaultValue;
     }
   }

@@ -153,7 +153,7 @@ namespace qi
       // in your code.
       void* res = Manager::create();
       if (!res)
-        qiLogError("qitype.bypointer") << "initializeStorage error on " << typeid(T).name();
+        qiLogErrorC("qitype.bypointer") << "initializeStorage error on " << typeid(T).name();
       return res;
     }
 

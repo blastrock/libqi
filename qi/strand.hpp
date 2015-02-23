@@ -79,7 +79,7 @@ private:
   template <typename T>                                                     \
   struct SchedulerHelper<n, T>                                              \
   {                                                                         \
-    BOOST_PP_REPEAT(n, typedefi, _);                                        \
+    BOOST_PP_REPEAT(n, typedefi, _)                                         \
     static boost::function<T> _scheduler(const boost::function<T>& f,       \
                                          Strand* strand)                    \
     {                                                                       \

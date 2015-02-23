@@ -68,7 +68,7 @@ namespace qi {
           && pointee.kind() == TypeKind_Object)
         { // shared_ptr<Foo> p with Foo object type.
           // Create our own shared_ptr, that holds p and delete it on destruction
-          qiLogDebug("qitype.typedispatcher") << "Detected object shared ptr";
+          qiLogDebugC("qitype.typedispatcher") << "Detected object shared ptr";
           AnyReference shared_ptr = value.clone();
           AnyObject ao(new GenericObject(static_cast<ObjectTypeInterface*>(pointee.type()), pointee.rawValue()),
             boost::bind(&AnyObject::deleteCustomDeleter, _1, (boost::function<void(Empty*)>)boost::bind(&AnyReference::destroy, shared_ptr)));
@@ -112,7 +112,7 @@ namespace qi {
       case TypeKind_Function:
       case TypeKind_Signal:
       case TypeKind_Property:
-        qiLogError("qitype.typedispatcher") << "Signal and Property not handled";
+        qiLogErrorC("qitype.typedispatcher") << "Signal and Property not handled";
 
     }
     return v;

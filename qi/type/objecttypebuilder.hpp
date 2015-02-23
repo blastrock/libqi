@@ -268,7 +268,7 @@ namespace qi {
     TypeInterface* _next;
   };
 }
-QI_TEMPLATE_TYPE_DECLARE(qi::Future);
+QI_TEMPLATE_TYPE_DECLARE(qi::Future)
 namespace qi {
   template<typename T> class TypeOfTemplateImpl<qi::FutureSync, T> :
       public TypeOfTemplateDefaultImpl<qi::FutureSync, T>
@@ -298,9 +298,9 @@ namespace qi {
     TypeInterface* _next;
   };
 }
-QI_TEMPLATE_TYPE_DECLARE(qi::FutureSync);
+QI_TEMPLATE_TYPE_DECLARE(qi::FutureSync)
 
-QI_REGISTER_TEMPLATE_OBJECT(qi::Promise, setValue, setError, setCanceled, reset, future, value, trigger);
+QI_REGISTER_TEMPLATE_OBJECT(qi::Promise, setValue, setError, setCanceled, reset, future, value, trigger)
 namespace qi { namespace detail {
   template<typename T> struct TypeManager<Future<T> >: public TypeManagerDefaultStruct<Future<T> > {};
   template<typename T> struct TypeManager<FutureSync<T> >: public TypeManagerDefaultStruct<FutureSync<T> > {};

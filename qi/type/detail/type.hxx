@@ -43,7 +43,7 @@ namespace qi  {
     template<typename T>
     inline void initializeType(TypeInterface* &tgt)
     {
-      qiLogDebug("qitype.typeof") << "first typeOf request for unregistered type " << typeid(T).name();
+      qiLogDebugC("qitype.typeof") << "first typeOf request for unregistered type " << typeid(T).name();
       tgt = new TypeImpl<T>();
     }
 

@@ -92,59 +92,59 @@ int main(int argc, char **argv)
   if (vm.count("synchronous-log"))
     qi::log::setSynchronousLog(true);
 
-  qiLogFatal("core.log.example.1", "%d\n", 41);
-  qiLogError("core.log.example.1", "%d\n", 42);
-  qiLogWarning("core.log.example.1", "%d\n", 43);
-  qiLogInfo("core.log.example.1", "%d\n", 44);
-  qiLogVerbose("core.log.example.1", "%d\n", 45);
-  qiLogDebug("core.log.example.1", "%d\n", 46);
+  //qiLogFatal("core.log.example.1", "%d\n", 41);
+  //qiLogError("core.log.example.1", "%d\n", 42);
+  //qiLogWarning("core.log.example.1", "%d\n", 43);
+  //qiLogInfo("core.log.example.1", "%d\n", 44);
+  //qiLogVerbose("core.log.example.1", "%d\n", 45);
+  //qiLogDebug("core.log.example.1", "%d\n", 46);
 
-  qiLogFatal("core.log.example.2")   << "f" << 4 << std::endl;
-  qiLogError("core.log.example.2")   << "e" << 4 << std::endl;
-  qiLogWarning("core.log.example.2") << "w" << 4 << std::endl;
-  qiLogInfo("core.log.example.2")    << "i" << 4 << std::endl;
-  qiLogVerbose("core.log.example.2") << "v" << 4 << std::endl;
-  qiLogDebug("core.log.example.2")   << "d" << 4 << std::endl;
+  qiLogFatalC("core.log.example.2")   << "f" << 4 << std::endl;
+  qiLogErrorC("core.log.example.2")   << "e" << 4 << std::endl;
+  qiLogWarningC("core.log.example.2") << "w" << 4 << std::endl;
+  qiLogInfoC("core.log.example.2")    << "i" << 4 << std::endl;
+  qiLogVerboseC("core.log.example.2") << "v" << 4 << std::endl;
+  qiLogDebugC("core.log.example.2")   << "d" << 4 << std::endl;
 
-  qiLogFatal("core.log.example.1", "without '\\n': %d", 41);
-  qiLogError("core.log.example.1", "without '\\n': %d", 42);
-  qiLogWarning("core.log.example.1", "without '\\n': %d", 43);
-  qiLogInfo("core.log.example.1", "without '\\n': %d", 44);
-  qiLogVerbose("core.log.example.1", "without '\\n': %d", 45);
-  qiLogDebug("core.log.example.1", "without '\\n': %d", 46);
-  qiLogFatal("core.log.example.1", "");
-  qiLogFatal("core.log.example.1", "\n");
+  //qiLogFatal("core.log.example.1", "without '\\n': %d", 41);
+  //qiLogError("core.log.example.1", "without '\\n': %d", 42);
+  //qiLogWarning("core.log.example.1", "without '\\n': %d", 43);
+  //qiLogInfo("core.log.example.1", "without '\\n': %d", 44);
+  //qiLogVerbose("core.log.example.1", "without '\\n': %d", 45);
+  //qiLogDebug("core.log.example.1", "without '\\n': %d", 46);
+  //qiLogFatal("core.log.example.1", "");
+  //qiLogFatal("core.log.example.1", "\n");
 
-  qiLogFatal("core.log.example.2")   << "f " << "without '\\n'";
-  qiLogError("core.log.example.2")   << "e " << "without '\\n'";
-  qiLogWarning("core.log.example.2") << "w " << "without '\\n'";
-  qiLogInfo("core.log.example.2")    << "i " << "without '\\n'";
-  qiLogVerbose("core.log.example.2") << "v " << "without '\\n'";
-  qiLogDebug("core.log.example.2")   << "d " << "without '\\n'";
-  qiLogFatal("core.log.example.2")   << "";
-  qiLogFatal("core.log.example.2")   << std::endl;
+  qiLogFatalC("core.log.example.2")   << "f " << "without '\\n'";
+  qiLogErrorC("core.log.example.2")   << "e " << "without '\\n'";
+  qiLogWarningC("core.log.example.2") << "w " << "without '\\n'";
+  qiLogInfoC("core.log.example.2")    << "i " << "without '\\n'";
+  qiLogVerboseC("core.log.example.2") << "v " << "without '\\n'";
+  qiLogDebugC("core.log.example.2")   << "d " << "without '\\n'";
+  qiLogFatalC("core.log.example.2")   << "";
+  qiLogFatalC("core.log.example.2")   << std::endl;
 
-  qiLogFatal("core.log.example.3", "%d", 21)   << "f" << 4 << std::endl;
-  qiLogError("core.log.example.3", "%d", 21)   << "e" << 4 << std::endl;
-  qiLogWarning("core.log.example.3", "%d", 21) << "w" << 4 << std::endl;
-  qiLogInfo("core.log.example.3", "%d", 21)    << "i" << 4 << std::endl;
-  qiLogVerbose("core.log.example.3", "%d", 21) << "v" << 4 << std::endl;
-  qiLogDebug("core.log.example.3", "%d", 21)   << "d" << 4 << std::endl;
+  //qiLogFatal("core.log.example.3", "%d", 21)   << "f" << 4 << std::endl;
+  //qiLogError("core.log.example.3", "%d", 21)   << "e" << 4 << std::endl;
+  //qiLogWarning("core.log.example.3", "%d", 21) << "w" << 4 << std::endl;
+  //qiLogInfo("core.log.example.3", "%d", 21)    << "i" << 4 << std::endl;
+  //qiLogVerbose("core.log.example.3", "%d", 21) << "v" << 4 << std::endl;
+  //qiLogDebug("core.log.example.3", "%d", 21)   << "d" << 4 << std::endl;
 
   //c style
-  qiLogWarning("core.log.example.4",
-               "Oups my buffer is too bad: %x\n",
-               0x0BADCAFE);
+  //qiLogWarning("core.log.example.4",
+  //             "Oups my buffer is too bad: %x\n",
+  //             0x0BADCAFE);
 
   //c++ style
-  qiLogError("core.log.example.4") << "Where is nao?"
-                                   << " - Nao is in the kitchen."
-                                   << " - How many are they? "
-                                   << 42 << std::endl;
+  qiLogErrorC("core.log.example.4") << "Where is nao?"
+                                    << " - Nao is in the kitchen."
+                                    << " - How many are they? "
+                                    << 42 << std::endl;
 
   //mixup style
-  qiLogInfo("core.log.example.4", "%d %d ", 41, 42) << 43 << " " << 44
-                                                    << std::endl;
+  //qiLogInfo("core.log.example.4", "%d %d ", 41, 42) << 43 << " " << 44
+  //                                                  << std::endl;
 
   std::cout << "I've just finished to log!" << std::endl;
 }

@@ -255,16 +255,16 @@ public:
   // no-op deletor callback
   static void keepManagedObjectPtr(detail::ManagedObjectPtr ptr) {}
   template<typename U>
-  static void keepReference(GenericObject* obj, boost::shared_ptr<U> ptr) {qiLogDebug("qi.object") << "AnyObject ptr holder deleter"; delete obj;}
-  static void noDeleteT(T*) {qiLogDebug("qi.object") << "AnyObject noop T deleter";}
-  static void noDelete(GenericObject*) {qiLogDebug("qi.object") << "AnyObject noop deleter";}
+  static void keepReference(GenericObject* obj, boost::shared_ptr<U> ptr) {qiLogDebugC("qi.object") << "AnyObject ptr holder deleter"; delete obj;}
+  static void noDeleteT(T*) {qiLogDebugC("qi.object") << "AnyObject noop T deleter";}
+  static void noDelete(GenericObject*) {qiLogDebugC("qi.object") << "AnyObject noop deleter";}
   // deletor callback that deletes only the GenericObject and not the content
-  static void deleteGenericObjectOnly(GenericObject* obj) { qiLogDebug("qi.object") << "AnyObject GO deleter"; delete obj;}
+  static void deleteGenericObjectOnly(GenericObject* obj) { qiLogDebugC("qi.object") << "AnyObject GO deleter"; delete obj;}
   template<typename U>
-  static void deleteGenericObjectOnlyAndKeep(GenericObject* obj, U) { qiLogDebug("qi.object") << "AnyObject GO-keep deleter";delete obj;}
+  static void deleteGenericObjectOnlyAndKeep(GenericObject* obj, U) { qiLogDebugC("qi.object") << "AnyObject GO-keep deleter";delete obj;}
   static void deleteCustomDeleter(GenericObject* obj, boost::function<void(T*)> deleter)
   {
-    qiLogDebug("qi.object") << "custom deleter";
+    qiLogDebugC("qi.object") << "custom deleter";
     deleter((T*)obj->value);
     delete obj;
   }
@@ -284,7 +284,7 @@ private:
 
   static void deleteObject(GenericObject* obj)
   {
-    qiLogDebug("qi.object") << "deleteObject " << obj << " "
+    qiLogDebugC("qi.object") << "deleteObject " << obj << " "
       << obj->value << " " << obj->type->infoString();
     obj->type->destroy(obj->value);
     delete obj;
@@ -471,7 +471,7 @@ template<typename T> void Object<T>::checkT()
     detail::ProxyGeneratorMap::iterator it = map.find(typeOf<T>()->info());
     if (it != map.end())
     {
-      qiLogDebug("qitype.anyobject") << "Upgrading Object to specialized proxy.";
+      qiLogDebugC("qitype.anyobject") << "Upgrading Object to specialized proxy.";
       AnyReference ref = it->second(AnyObject(_obj));
       _obj = ref.to<detail::ManagedObjectPtr>();
       ref.destroy();

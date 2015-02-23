@@ -12,8 +12,6 @@
 
 namespace qi {
 
-
-
   class SignatureConvertor {
   public:
 
@@ -35,7 +33,6 @@ namespace qi {
     std::string          _result;
   };
 
-};
-
+}
 
 #endif  // _SRC_SIGNATURECONVERTOR_HPP_

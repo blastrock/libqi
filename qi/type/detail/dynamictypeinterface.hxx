@@ -17,13 +17,13 @@ namespace qi {
   public:
     AnyReference get(void* storage)
     {
-      qiLogVerbose("qitype.impl") << "get on boost::any not implemented";
+      qiLogVerboseC("qitype.impl") << "get on boost::any not implemented";
       return AnyReference();
     };
 
     void set(void** storage, AnyReference source)
     {
-      qiLogVerbose("qitype.impl") << "set on boost::any not implemented";
+      qiLogVerboseC("qitype.impl") << "set on boost::any not implemented";
     }
 
     typedef DefaultTypeImplMethods<boost::any, TypeByPointerPOD<boost::any> > Methods;

@@ -67,7 +67,7 @@ namespace qi {
   }
 
   #define gen(n, ATYPEDECL, ATYPES, ADECL, AUSE, comma) \
-  QI_GEN_MAYBE_TEMPLATE_OPEN(comma) ATYPEDECL QI_GEN_MAYBE_TEMPLATE_CLOSE(comma) \
+  QI_GEN_MAYBE_TEMPLATE_OPEN_N(n) ATYPEDECL QI_GEN_MAYBE_TEMPLATE_CLOSE_N(n) \
   inline unsigned int DynamicObjectBuilder::advertiseSignal(const std::string& s) \
   { \
     return advertiseSignalF<void(ATYPES)>(s); \

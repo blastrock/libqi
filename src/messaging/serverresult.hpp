@@ -28,7 +28,7 @@ namespace qi {
       if (forcedSignature.isValid() && socket->remoteCapability("MessageFlags", false))
       {
         std::pair<AnyReference, bool> conv = val.convert(TypeInterface::fromSignature(forcedSignature));
-        qiLogDebug("qimessaging.serverresult") << "Converting to forced signature " << forcedSignature.toString()
+        qiLogDebugC("qimessaging.serverresult") << "Converting to forced signature " << forcedSignature.toString()
           << ", data=" << val.type()->infoString() <<", advertised=" <<targetSignature.toString() << ", success=" << conv.second;
         if (conv.first.type())
         {
@@ -81,7 +81,7 @@ namespace qi {
       ret.setError("Unknown error caught while forwarding the answer");
     }
     if (!socket->send(ret))
-      qiLogWarning("qimessaging.serverresult") << "Can't generate an answer for address:" << replyaddr;
+      qiLogWarningC("qimessaging.serverresult") << "Can't generate an answer for address:" << replyaddr;
   }
 
   inline void serverResultAdapter(qi::Future<AnyReference> future,
@@ -122,7 +122,7 @@ namespace qi {
       }
     }
     if (!socket->send(ret))
-      qiLogWarning("qimessaging.serverresult") << "Can't generate an answer for address:" << replyaddr;
+      qiLogWarningC("qimessaging.serverresult") << "Can't generate an answer for address:" << replyaddr;
   }
 }
 

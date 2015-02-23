@@ -99,13 +99,13 @@ namespace qi {
 QI_TYPE_STRUCT_AGREGATE_CONSTRUCTOR(qi::MinMaxSum,
   ("minValue",       minValue),
   ("maxValue",       maxValue),
-  ("cumulatedValue", cumulatedValue));
+  ("cumulatedValue", cumulatedValue))
 
 QI_TYPE_STRUCT_AGREGATE_CONSTRUCTOR(qi::MethodStatistics,
   ("count",  count),
   ("wall",   wall),
   ("user",   user),
-  ("system", system));
+  ("system", system))
 
 QI_TYPE_STRUCT_AGREGATE_CONSTRUCTOR(qi::EventTrace,
   ("id",            id),
@@ -116,8 +116,8 @@ QI_TYPE_STRUCT_AGREGATE_CONSTRUCTOR(qi::EventTrace,
   ("userUsTime",    userUsTime),
   ("systemUsTime",  systemUsTime),
   ("callerContext", callerContext),
-  ("calleeContext", calleeContext));
+  ("calleeContext", calleeContext))
 
-QI_TYPE_STRUCT(qi::os::timeval, tv_sec, tv_usec);
+QI_TYPE_STRUCT(qi::os::timeval, tv_sec, tv_usec)
 
 #endif  // _QITYPE_ANYOBJECT_HPP_

@@ -47,7 +47,7 @@ inline threadTest::threadTest()
   _glThread = boost::thread(&threadTest::run, &threadGolbal);
   std::cout << "Creating main thread" << std::endl;
   fflush(stdout);
-};
+}
 
 inline threadTest::~threadTest()
 {
@@ -64,7 +64,7 @@ inline threadTest::~threadTest()
   printTest();
   std::cout << "Main thread destroyed" << std::endl;
   fflush(stdout);
-};
+}
 
 
 int main(int argc, char *argv[])

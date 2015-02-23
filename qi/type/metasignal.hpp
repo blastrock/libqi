@@ -37,15 +37,15 @@ namespace qi {
     // C4251
     std::string   _name;
     qi::Signature _signature;
-    QI_TYPE_STRUCT_PRIVATE_ACCESS(MetaSignal);
+    QI_TYPE_STRUCT_PRIVATE_ACCESS(MetaSignal)
   };
 
-}; // namespace qi
+} // namespace qi
 
 QI_TYPE_STRUCT_AGREGATE_CONSTRUCTOR(qi::MetaSignal,
   ("uid",_uid),
   ("name",_name),
-  ("signature", _signature));
+  ("signature", _signature))
 
 #ifdef _MSC_VER
 #  pragma warning( pop )

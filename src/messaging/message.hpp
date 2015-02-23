@@ -221,6 +221,6 @@ namespace qi {
   std::ostream& operator<<(std::ostream& os, const qi::Message& msg);
 }
 
-QI_TYPE_CONCRETE(qi::Message);
+QI_TYPE_CONCRETE(qi::Message)
 
 #endif  // _SRC_MESSAGE_HPP_

@@ -74,7 +74,7 @@ namespace qi {
       PrivateHeadFileLogHandler* _p;
     }; // !HeadFileLogHandler
 
-  }; // !log
-}; // !qi
+  } // !log
+} // !qi
 
 #endif  // _QI_LOG_HEADFILELOGHANDLER_HPP_

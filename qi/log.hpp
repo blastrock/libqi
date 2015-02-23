@@ -64,10 +64,12 @@
  */
 #if defined(NO_QI_DEBUG) || defined(NDEBUG)
 # define qiLogDebug(...) ::qi::log::detail::qiFalse() && false < qi::log::detail::NullStream().self()
+# define qiLogDebugC(cat) ::qi::log::detail::qiFalse() && false < qi::log::detail::NullStream().self()
 # define qiLogDebugF(Msg, ...)
 #else
-# define qiLogDebug(...)   _QI_LOG_MESSAGE_STREAM(LogLevel_Debug,   Debug ,  __VA_ARGS__)
-# define qiLogDebugF(Msg, ...)   _QI_LOG_MESSAGE(LogLevel_Debug,   _QI_LOG_FORMAT(Msg, __VA_ARGS__))
+# define qiLogDebug(...) _QI_LOG_MESSAGE_STREAM(LogLevel_Debug,   Debug ,  __VA_ARGS__)
+# define qiLogDebugC(cat) _qiLogDebug(cat)
+# define qiLogDebugF(Msg, ...) _QI_LOG_MESSAGE(LogLevel_Debug,   _QI_LOG_FORMAT(Msg, __VA_ARGS__))
 #endif
 
 /**
@@ -75,10 +77,12 @@
  */
 #if defined(NO_QI_VERBOSE)
 # define qiLogVerbose(...) ::qi::log::detail::qiFalse() && false < qi::log::detail::NullStream().self()
+# define qiLogVerboseC(cat) ::qi::log::detail::qiFalse() && false < qi::log::detail::NullStream().self()
 # define qiLogVerboseF(Msg, ...)
 #else
 # define qiLogVerbose(...) _QI_LOG_MESSAGE_STREAM(LogLevel_Verbose, Verbose, __VA_ARGS__)
-# define qiLogVerboseF(Msg, ...)   _QI_LOG_MESSAGE(LogLevel_Verbose,   _QI_LOG_FORMAT(Msg, __VA_ARGS__))
+# define qiLogVerboseC(cat) _qiLogVerbose(cat)
+# define qiLogVerboseF(Msg, ...) _QI_LOG_MESSAGE(LogLevel_Verbose,   _QI_LOG_FORMAT(Msg, __VA_ARGS__))
 #endif
 
 /**
@@ -86,10 +90,12 @@
  */
 #if defined(NO_QI_INFO)
 # define qiLogInfo(...) ::qi::log::detail::qiFalse() && false < qi::log::detail::NullStream().self()
+# define qiLogInfoC(cat) ::qi::log::detail::qiFalse() && false < qi::log::detail::NullStream().self()
 # define qiLogInfoF(Msg, ...)
 #else
-# define qiLogInfo(...)    _QI_LOG_MESSAGE_STREAM(LogLevel_Info,    Info,    __VA_ARGS__)
-# define qiLogInfoF(Msg, ...)   _QI_LOG_MESSAGE(LogLevel_Info,   _QI_LOG_FORMAT(Msg, __VA_ARGS__))
+# define qiLogInfo(...) _QI_LOG_MESSAGE_STREAM(LogLevel_Info,    Info,    __VA_ARGS__)
+# define qiLogInfoC(cat) _qiLogInfo(cat)
+# define qiLogInfoF(Msg, ...) _QI_LOG_MESSAGE(LogLevel_Info,   _QI_LOG_FORMAT(Msg, __VA_ARGS__))
 #endif
 
 /**
@@ -97,10 +103,12 @@
  */
 #if defined(NO_QI_WARNING)
 # define qiLogWarning(...) ::qi::log::detail::qiFalse() && false < qi::log::detail::NullStream().self()
+# define qiLogWarningC(cat) ::qi::log::detail::qiFalse() && false < qi::log::detail::NullStream().self()
 # define qiLogWarningF(Msg, ...)
 #else
 # define qiLogWarning(...) _QI_LOG_MESSAGE_STREAM(LogLevel_Warning, Warning, __VA_ARGS__)
-# define qiLogWarningF(Msg, ...)   _QI_LOG_MESSAGE(LogLevel_Warning,   _QI_LOG_FORMAT(Msg, __VA_ARGS__))
+# define qiLogWarningC(cat) _qiLogWarning(cat)
+# define qiLogWarningF(Msg, ...) _QI_LOG_MESSAGE(LogLevel_Warning,   _QI_LOG_FORMAT(Msg, __VA_ARGS__))
 #endif
 
 /**
@@ -108,10 +116,12 @@
  */
 #if defined(NO_QI_ERROR)
 # define qiLogError(...)   ::qi::log::detail::qiFalse() && false < qi::log::detail::NullStream().self()
+# define qiLogErrorC(cat) ::qi::log::detail::qiFalse() && false < qi::log::detail::NullStream().self()
 # define qiLogErrorF(Msg, ...)
 #else
-# define qiLogError(...)   _QI_LOG_MESSAGE_STREAM(LogLevel_Error,   Error,   __VA_ARGS__)
-# define qiLogErrorF(Msg, ...)   _QI_LOG_MESSAGE(LogLevel_Error,   _QI_LOG_FORMAT(Msg, __VA_ARGS__))
+# define qiLogError(...) _QI_LOG_MESSAGE_STREAM(LogLevel_Error,   Error,   __VA_ARGS__)
+# define qiLogErrorC(cat) _qiLogError(cat)
+# define qiLogErrorF(Msg, ...) _QI_LOG_MESSAGE(LogLevel_Error,   _QI_LOG_FORMAT(Msg, __VA_ARGS__))
 #endif
 
 /**
@@ -119,10 +129,12 @@
  */
 #if defined(NO_QI_FATAL)
 # define qiLogFatal(...)  ::qi::log::detail::qiFalse() && false < qi::log::detail::NullStream().self()
+# define qiLogFatalC(cat) ::qi::log::detail::qiFalse() && false < qi::log::detail::NullStream().self()
 # define qiLogFatalF(Msg, ...)
 #else
-# define qiLogFatal(...)   _QI_LOG_MESSAGE_STREAM(LogLevel_Fatal,   Fatal,   __VA_ARGS__)
-# define qiLogFatalF(Msg, ...)   _QI_LOG_MESSAGE(LogLevel_Fatal,   _QI_LOG_FORMAT(Msg, __VA_ARGS__))
+# define qiLogFatal(...) _QI_LOG_MESSAGE_STREAM(LogLevel_Fatal,   Fatal,   __VA_ARGS__)
+# define qiLogFatalC(cat) _qiLogFatal(cat)
+# define qiLogFatalF(Msg, ...) _QI_LOG_MESSAGE(LogLevel_Fatal,   _QI_LOG_FORMAT(Msg, __VA_ARGS__))
 #endif
 
 

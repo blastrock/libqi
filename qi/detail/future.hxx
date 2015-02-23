@@ -148,10 +148,10 @@ namespace qi {
               _onResult[i](future);
           } catch(const qi::PointerLockException&) { // do nothing
           } catch(const std::exception& e) {
-            qiLogError("qi.future") << "Exception caught in future callback "
+            qiLogErrorC("qi.future") << "Exception caught in future callback "
                                     << e.what();
           } catch (...) {
-            qiLogError("qi.future")
+            qiLogErrorC("qi.future")
                 << "Unknown exception caught in future callback";
           }
         }

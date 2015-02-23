@@ -79,7 +79,7 @@ namespace qi {
     inline qi::TransportSocketPtr currentSocket() const {
 #ifndef NDEBUG
       if (_callType != MetaCallType_Direct)
-        qiLogWarning("qimessaging.boundobject") << " currentSocket() used but callType is not direct";
+        qiLogWarningC("qimessaging.boundobject") << " currentSocket() used but callType is not direct";
 #endif
       boost::recursive_mutex::scoped_lock lock(_mutex);
       return _currentSocket;

@@ -56,7 +56,7 @@ namespace qi {
     FutureBase::~FutureBase()
     {
       delete _p;
-    };
+    }
 
     FutureState FutureBase::state() const
     {

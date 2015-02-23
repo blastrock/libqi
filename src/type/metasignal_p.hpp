@@ -33,6 +33,6 @@ namespace qi {
     unsigned int       _uid;
   };
 
-};
+}
 
 #endif  // _SRC_METASIGNAL_P_HPP_

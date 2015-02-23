@@ -57,7 +57,7 @@ namespace qi
     // this thread.
     if (!_wasDestroyed)
     {
-      qiLogError("qi.Trackable") << "Trackable destroyed without calling destroy()";
+      qiLogErrorC("qi.Trackable") << "Trackable destroyed without calling destroy()";
       // do it to mitigate the effect, but it's too late
       destroy();
     }
@@ -92,9 +92,9 @@ namespace qi
       {}
 
 #define genCall(n, ATYPEDECL, ATYPES, ADECL, AUSE, comma) \
-     QI_GEN_MAYBE_TEMPLATE_OPEN(comma)                    \
+     QI_GEN_MAYBE_TEMPLATE_OPEN_N(n)                      \
      ATYPEDECL                                            \
-     QI_GEN_MAYBE_TEMPLATE_CLOSE(comma)                   \
+     QI_GEN_MAYBE_TEMPLATE_CLOSE_N(n)                     \
      Result operator()(ADECL) {                           \
        ST s = _wptr.lock();                               \
        if (s)                                             \

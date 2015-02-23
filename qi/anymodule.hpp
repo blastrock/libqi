@@ -113,7 +113,7 @@ namespace qi
 
 }
 
-QI_TYPE_STRUCT(qi::ModuleInfo, name, type, path);
+QI_TYPE_STRUCT(qi::ModuleInfo, name, type, path)
 
 /** register a normal module, a function will be exported to allow the module loader to init the module
  */

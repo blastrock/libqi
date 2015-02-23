@@ -266,4 +266,4 @@ namespace qi {
     qi::typeDispatch(stv, val);
   }
 
-};
+}

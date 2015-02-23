@@ -149,5 +149,4 @@ namespace qi {
     _result += ")";
   }
 
-
-};
+}

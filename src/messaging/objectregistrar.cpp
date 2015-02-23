@@ -156,7 +156,7 @@ namespace qi {
     future.connect(boost::bind<void>(&ObjectRegistrar::onFutureFinished, this, _1, id, prom));
 
     return prom.future();
-  };
+  }
 
   qi::Future<void> ObjectRegistrar::unregisterService(unsigned int idx)
   {

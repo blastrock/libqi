@@ -139,7 +139,7 @@ namespace qi {
       return result;
     result = fallbackTypeFactory()[type.name()];
     if (result)
-      qiLogError("qitype.type") << "RTTI failure for " << type.name();
+      qiLogError() << "RTTI failure for " << type.name();
     return result;
   }
 

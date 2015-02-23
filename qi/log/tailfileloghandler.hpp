@@ -74,7 +74,7 @@ namespace qi {
       PrivateTailFileLogHandler* _p;
     }; // !TailFileLogHandler
 
-  }; // !log
-}; // !qi
+  } // !log
+} // !qi
 
 #endif  // _QI_LOG_TAILFILELOGHANDLER_HPP_
